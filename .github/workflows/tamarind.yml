@@ -1,0 +1,28 @@
+name: "CRATER"
+run-name: "WILLOWBROOK"
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+jobs:
+  Mire:
+    permissions:
+      pages: write
+      id-token: write
+      contents: read
+    runs-on: ubuntu-24.04
+    environment:
+      name: "github-pages"
+      url: ${{ steps.Gecko.outputs.page_url }}
+    steps:
+      - name: "falcon"
+        uses: actions/checkout@v5
+      - name: "cinder"
+        uses: actions/configure-pages@v6
+      - name: "garnet"
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: ./
+      - name: "thorn"
+        id: Gecko
+        uses: actions/deploy-pages@v5
